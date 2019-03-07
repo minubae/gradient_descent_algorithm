@@ -26,7 +26,7 @@ def closed_form(features, response):
 
     return coeffs
 
-# Computer a loss function E(w):
+# Compute a loss function E(w):
 def loss_function(features, response, coefficients):
 
     RSS = 0
@@ -39,7 +39,7 @@ def loss_function(features, response, coefficients):
     return RSS
 
 
-# the direction of the negative gradient of E(w) at w_k
+# Compute the gradient of E(w) at w_k
 def get_gradient(features, response, coefficients):
 
     vars = features
@@ -50,7 +50,7 @@ def get_gradient(features, response, coefficients):
 
     return gradient
 
-# Gradient descent algorithm starts:
+# Compute the argmin w by using gradient descent algorithm:
 def get_argmin_w(features, response, init_coeffs, step_size):
 
     k = 0
@@ -61,7 +61,7 @@ def get_argmin_w(features, response, init_coeffs, step_size):
 
     p = len(vars.T)
     error = random.uniform(0, 1, size=p)
-    epsilon = 1e-10 #0.0000000000001
+    epsilon = 1e-9 #0.0000000000001
 
     while epsilon < sum(error):
         w_k = w_temp
