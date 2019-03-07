@@ -59,16 +59,15 @@ def get_argmin_w(features, response, init_coeffs, step_size):
     w_temp = init_coeffs
     a_k = step_size
 
-    p = len(vars.T)
-    error = random.uniform(0, 1, size=p)
-    epsilon = 1e-9 #0.0000000000001
+    error = 0.1
+    epsilon = 1e-10 #0.0000000000001
 
-    while epsilon < sum(error):
+    while epsilon < error:
         w_k = w_temp
         gradient = get_gradient(vars, resp, w_k)
         d_k = -gradient
         w_temp = w_k + a_k*d_k
-        error = np.abs(loss_function(vars, resp, w_temp) - loss_function(vars, resp, w_k))
+        error = abs(loss_function(vars, resp, w_temp) - loss_function(vars, resp, w_k))
 
         print(w_temp)
         print(error)
