@@ -10,8 +10,6 @@ from numpy import transpose as T
 from numpy import dot, exp, add, sum, random, abs
 from numpy import array as vec
 
-
-
 # The Closed form solution to computer coefficients vector w for the linear model:
 def closed_form(features, response):
 
