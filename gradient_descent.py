@@ -5,16 +5,11 @@
 # Institute: The Department of Computer Science and Engineering, UCONN
 ###########################################################################################################################
 import numpy as np
+from numpy.linalg import inv, norm
 from numpy import transpose as T
-from numpy.linalg import inv
-from numpy.linalg import norm
-from numpy import dot
-from numpy import exp
-from numpy import add
-from numpy import sum
-from numpy import random
+from numpy import dot, exp, add, sum, random, abs
 from numpy import array as vec
-from numpy import abs
+
 
 
 # The Closed form solution to computer coefficients vector w for the linear model:
